@@ -10,3 +10,8 @@ dist/
 
 # Secrets
 .env
+
+# OS / editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
