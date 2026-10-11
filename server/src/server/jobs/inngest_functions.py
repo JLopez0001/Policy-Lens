@@ -8,5 +8,3 @@ from server.jobs.client import inngest_client
 
 async def injest_document(ctx: inngest.Context):
     return {"inngest":"pdf"}
-
-functions = [injest_document]
