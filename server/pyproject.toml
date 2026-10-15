@@ -10,6 +10,7 @@ dependencies = [
     "fastapi[standard]>=0.142.4",
     "inngest>=0.5.19",
     "llama-index>=0.14.25",
+    "pydantic-settings>=2.15.0",
     "qdrant-client>=1.19.1",
     "uvicorn>=0.54.0",
 ]

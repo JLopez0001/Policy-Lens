@@ -2324,6 +2324,7 @@ dependencies = [
     { name = "fastapi", extra = ["standard"] },
     { name = "inngest" },
     { name = "llama-index" },
+    { name = "pydantic-settings" },
     { name = "qdrant-client" },
     { name = "uvicorn" },
 ]
@@ -2333,6 +2334,7 @@ requires-dist = [
     { name = "fastapi", extras = ["standard"], specifier = ">=0.142.4" },
     { name = "inngest", specifier = ">=0.5.19" },
     { name = "llama-index", specifier = ">=0.14.25" },
+    { name = "pydantic-settings", specifier = ">=2.15.0" },
     { name = "qdrant-client", specifier = ">=1.19.1" },
     { name = "uvicorn", specifier = ">=0.54.0" },
 ]
