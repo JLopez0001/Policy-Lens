@@ -7,9 +7,10 @@ class QdrantStorage:
             self,
             collection: str =settings.qdrant_collection,
             dim: int =settings.dimension
-    ):
+    ) -> None:
         self.client = qdrant
-        self.collection = collection
+        self.collection: str = collection
+
         if not self.client.collection_exists(self.collection):
             self.client.create_collection(collection_name=self.collection, vectors_config= VectorParams(size=dim, distance=Distance.COSINE))
 
