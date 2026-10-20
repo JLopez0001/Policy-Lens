@@ -12,6 +12,9 @@ class QdrantStorage:
         self.collection: str = collection
 
         if not self.client.collection_exists(self.collection):
-            self.client.create_collection(collection_name=self.collection, vectors_config= VectorParams(size=dim, distance=Distance.COSINE))
+            self.client.create_collection(
+                collection_name=self.collection, 
+                vectors_config= VectorParams(size=dim, distance=Distance.COSINE)
+            )
 
  
