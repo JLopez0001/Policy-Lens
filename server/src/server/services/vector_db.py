@@ -17,4 +17,10 @@ class QdrantStorage:
                 vectors_config= VectorParams(size=dim, distance=Distance.COSINE)
             )
 
+    def upsert(
+            self, 
+            ids:list[int | str], 
+            vectors:list[list[float]], 
+            payloads: list[dict]
+        ) -> None:
  
