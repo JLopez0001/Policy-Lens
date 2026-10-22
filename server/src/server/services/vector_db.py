@@ -1,6 +1,6 @@
 from server.database import qdrant
 from server.config import settings
-from qdrant_client.models import Distance, VectorParams
+from qdrant_client.models import Distance, VectorParams, PointStruct
 
 class QdrantStorage:
     def __init__(
