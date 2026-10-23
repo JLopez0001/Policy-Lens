@@ -24,12 +24,10 @@ class QdrantStorage:
             payloads: list[dict]
         ) -> None:
 
-        points=[PointStruct(
-            id=ids[i],
-            payload=payloads[i],
-            vector=vectors[i]
-            )
-            for i in range(len(ids))]
+        points=[
+            PointStruct(id=ids[i], payload=payloads[i], vector=vectors[i])
+            for i in range(len(ids))
+        ]
         
         self.client.upsert(collection_name=self.collection, points=points)
         
