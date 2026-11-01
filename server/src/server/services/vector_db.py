@@ -38,3 +38,14 @@ class QdrantStorage:
             with_payload= True,
             limit= top_k
         ).points
+
+        findings = []
+        for r in results:
+            payload = r.payload or {}
+            findings.append(
+                {
+                   "text": payload.get("text", ""),
+                   "sources": payload.get("sources", ""),
+                   "score": r.score
+                }
+            )
