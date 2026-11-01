@@ -49,3 +49,5 @@ class QdrantStorage:
                    "score": r.score
                 }
             )
+
+        return findings
