@@ -36,6 +36,7 @@ class QdrantStorage:
         self.client.upsert(collection_name=self.collection, points=points)
 
     def search(self, vector_query: list[float], top_k: int = 5):
+        """Return the top_k most similar chunks with their text, source, and score."""
         results = self.client.query_points(
             collection_name= self.collection,
             query= vector_query,
