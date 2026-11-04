@@ -3,6 +3,8 @@ from server.config import settings
 from qdrant_client.models import Distance, VectorParams, PointStruct
 
 class QdrantStorage:
+    """Stores and searches document embeddings in a Qdrant collection."""
+
     def __init__(
             self,
             collection: str =settings.qdrant_collection,
@@ -11,6 +13,7 @@ class QdrantStorage:
         self.client = qdrant
         self.collection: str = collection
 
+        # Create the collection on first run; dim must match the embedding model.
         if not self.client.collection_exists(self.collection):
             self.client.create_collection(
                 collection_name=self.collection, 
@@ -23,7 +26,8 @@ class QdrantStorage:
             vectors:list[list[float]], 
             payloads: list[dict]
         ) -> None:
-
+        
+        """Insert or update points. Existing IDs are overwritten."""
         points=[
             PointStruct(id=ids[i], payload=payloads[i], vector=vectors[i])
             for i in range(len(ids))
